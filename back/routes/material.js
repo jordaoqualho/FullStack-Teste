@@ -22,17 +22,10 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     let materiais = await Material.find();
-    if (req.query.tipoDoMaterial || req.query.nomeDoMaterial) {
-      if (req.query.tipoDoMaterial.length < 1) {
-        materiais = await Material.find({
-          nomeDoMaterial: { $regex: req.query.nomeDoMaterial, $options: "i" },
-        });
-      } else {
-        materiais = await Material.find({
-          nomeDoMaterial: { $regex: req.query.nomeDoMaterial, $options: "i" },
-          tipoDoMaterial: req.query.tipoDoMaterial,
-        });
-      }
+    if (req.query.descricao) {
+      materiais = await Material.find({
+        descricao: { $regex: req.query.descricao, $options: "i" },
+      });
     }
     res.status(200).json(materiais);
   } catch (err) {

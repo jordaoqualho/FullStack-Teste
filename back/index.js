@@ -27,5 +27,5 @@ mongoose
 app.use("/material", materialRoute);
 
 app.listen(PORT, () => {
-  console.log("Backend está rodando!");
+  console.log("Backend está rodando na porta " + PORT + "!");
 });
