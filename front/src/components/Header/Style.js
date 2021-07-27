@@ -10,6 +10,30 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
 `;
 
+export const Input = styled.div`
+  position: relative;
+  svg {
+    color: #495057;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+  }
+  input {
+    background-color: #fff;
+    border-radius: 15px;
+    border: none;
+    padding: 9px 50px;
+    color: #495057;
+
+    ::placeholder {
+      color: #495057;
+      opacity: 0.5;
+    }
+  }
+`;
+
 export const Menu = styled.div`
   height: 90px;
   display: flex;

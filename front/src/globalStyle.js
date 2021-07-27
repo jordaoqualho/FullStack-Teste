@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   * {
   box-sizing: border-box;
   margin: 0;
+  outline: none;
   padding: 0;
   font-family: 'Roboto',sans-serif;
  } 
