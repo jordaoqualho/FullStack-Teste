@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: #343a40;
-  height: 1200px;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
 `;
