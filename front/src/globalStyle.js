@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   * {
   box-sizing: border-box;
   margin: 0;
+  text-decoration: none;
   outline: none;
   padding: 0;
   font-family: 'Roboto',sans-serif;
@@ -16,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
    border: none;
    color: #FFF;
  }
+
 `;
 
 export default GlobalStyle;

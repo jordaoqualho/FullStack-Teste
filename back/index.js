@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const PORT = process.env.PORT || 8080;
 const materialRoute = require("./routes/material");
+const marcaRoute = require("./routes/marca");
 
 // Acesso das informações do arquivo .env
 dotenv.config();
@@ -25,6 +26,7 @@ mongoose
 
 // End-points para utilização da API
 app.use("/material", materialRoute);
+app.use("/marca", marcaRoute);
 
 app.listen(PORT, () => {
   console.log("Backend está rodando na porta " + PORT + "!");

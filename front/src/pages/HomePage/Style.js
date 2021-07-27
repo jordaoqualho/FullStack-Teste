@@ -1,25 +1,46 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  background-color: #343a40;
+export const Wraper = styled.div`
+  background-color: #212121;
+  width: 100%;
   height: calc(100vh - 60px);
+`;
+
+export const Container = styled.div`
+  background-color: #212121;
+  height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #343a40;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: black;
+  }
 `;
 
 export const Material = styled.div`
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #212121;
+  cursor: pointer;
   height: 250px;
-  margin: 15px;
+  margin: 10px 10px;
   width: 250px;
   img {
     height: 70%;
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
   }
+`;
+
+export const MaterialText = styled.div`
+  padding: 10px 20px;
 `;
