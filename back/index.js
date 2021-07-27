@@ -4,13 +4,15 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const PORT = process.env.PORT || 8080;
-const clienteRoute = require("./routes/cliente");
-const produtoRoute = require("./routes/produto");
-const pedidoRoute = require("./routes/pedido");
-const userRoute = require("./routes/user");
+const materialRoute = require("./routes/material");
 
+// Acesso das informações do arquivo .env
 dotenv.config();
+
+// Configurando o cors para permitir acesso na porta 8080
 app.use(cors({ origin: "*", credentials: true }));
+
+// Iniciando a coneção com o MongoDB
 app.use(express.json());
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -21,10 +23,8 @@ mongoose
   .then(console.log("Conectado com MongoDB"))
   .catch((err) => console.log(err));
 
-app.use("/cliente", clienteRoute);
-app.use("/produto", produtoRoute);
-app.use("/pedido", pedidoRoute);
-app.use("/user", userRoute);
+// End-points para utilização da API
+app.use("/material", materialRoute);
 
 app.listen(PORT, () => {
   console.log("Backend está rodando!");
