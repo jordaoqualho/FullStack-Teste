@@ -41,6 +41,6 @@ https://styled-components.com/docs/basics
 
 https://qastack.com.br/programming/15772394/how-to-upload-display-and-save-images-using-node-js-and-express
 
-https://cria.io/detalhes/
+https://cria.i o/detalhes/
 
 https://appcria.com/login.php
