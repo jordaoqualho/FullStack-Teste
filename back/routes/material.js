@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//GET TODOS PRODUTOS
+// Retorna todos os materiais
 router.get("/", async (req, res) => {
   try {
     let materiais = await Material.find();
@@ -33,7 +33,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//DELETA TODOS PRODUTOS
+// Deleta todos os Materiais da Tabela
 router.delete("/deletar-todos", async (req, res) => {
   try {
     await Material.deleteMany();

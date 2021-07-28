@@ -82,11 +82,11 @@ export default function NewModal(props) {
       });
     }
     doPostMaterial();
-    tempAlert("Material Adicionado com sucesso!", 3000);
+    tempAlert("Material Adicionado com sucesso!", 1500);
     // setNewModal(!newModal);
     setTimeout(function () {
       window.location.reload();
-    }, 3000);
+    }, 1500);
   };
 
   function dataAtualFormatada() {
@@ -110,6 +110,7 @@ export default function NewModal(props) {
   return (
     <ModalContainer id="modal-container">
       <Modal onSubmit={handleSubmit}>
+        <h1>New Modal</h1>
         <h2>Thumb</h2>
         <InputImage type="file" onChange={handleChangeFile} />
         <Image>

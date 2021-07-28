@@ -21,7 +21,10 @@ export const Modal = styled.form`
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-  background-color: #212121;
+  background-color: #343a40;
+  h1 {
+    color: white;
+  }
   h2 {
     color: white;
     font-size: 14px;

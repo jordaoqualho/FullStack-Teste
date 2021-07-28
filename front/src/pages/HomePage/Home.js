@@ -13,6 +13,7 @@ import pedra from "img/pedra.jpg";
 import axios from "axios";
 
 import NewModal from "components/Modal/NewModal";
+import EditModal from "components/Modal/EditModal";
 
 export const Home = () => {
   const conexao = axios.create({
@@ -21,6 +22,7 @@ export const Home = () => {
   const [material, setMaterial] = useState([{}]);
   const [termoDePesquisa, setTermoDePesquisa] = useState("");
   const [newModal, setNewModal] = useState(false);
+  const [editModal, setEditModal] = useState({ open: false, materialId: "" });
 
   useEffect(() => {
     doGetMaterial(termoDePesquisa);
@@ -42,7 +44,7 @@ export const Home = () => {
         return (
           <Material
             key={i}
-            // onClick={() => history.push(`/produto/editar/${row._id}`)}
+            onClick={() => setEditModal({ open: true, materialId: row._id })}
           >
             <img src={pedra} alt="" />
             <MaterialText>
@@ -64,7 +66,10 @@ export const Home = () => {
             <h1>+</h1>
           </AdderButton>
         </AdderContainer>
-        {/* <EditModal></EditModal> */}
+        <EditModal
+          setEditModal={setEditModal}
+          editModal={editModal}
+        ></EditModal>
         <NewModal setNewModal={setNewModal} newModal={newModal}></NewModal>
       </Wraper>
     </>
