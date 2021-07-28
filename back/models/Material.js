@@ -9,19 +9,19 @@ const MaterialSchema = new mongoose.Schema(
     },
     thumb: {
       type: String,
-      required: true,
+      required: false,
     },
     marca: {
       type: String,
       required: true,
     },
     ativo: {
-      type: Boolean,
+      type: String,
       required: true,
     },
     dataInativacao: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   { timestamps: true }

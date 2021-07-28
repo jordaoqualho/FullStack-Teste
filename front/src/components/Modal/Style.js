@@ -11,7 +11,7 @@ export const ModalContainer = styled.div`
   height: calc(100vh - 60px);
 `;
 
-export const Modal = styled.div`
+export const Modal = styled.form`
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -30,20 +30,43 @@ export const Modal = styled.div`
 `;
 
 export const Input = styled.input`
-  background-color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin: 5px 0 30px 0;
 `;
 
-export const InputImage = styled(Input)`
-  height: 100px;
+export const Image = styled.div`
+  display: flex;
+  border-radius: 5px;
+  height: 90px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+
+  img {
+    height: 100%;
+  }
+`;
+
+export const InputImage = styled.input`
+  margin-top: 5px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin: 5px 0 0px 0;
+`;
+
+export const Select = styled.select`
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  margin: 5px 0 30px 0;
 `;
 
 export const Buttons = styled.div`
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
   cursor: pointer;
   button {
     background-color: white;
@@ -55,6 +78,10 @@ export const Buttons = styled.div`
     :hover {
       color: #fff;
       background-color: #495057;
+    }
+    a {
+      color: inherit;
+      padding: 10px 20px;
     }
   }
 `;

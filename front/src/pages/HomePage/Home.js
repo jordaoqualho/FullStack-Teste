@@ -57,12 +57,7 @@ export const Home = () => {
     <>
       <Header setTermoDePesquisa={setTermoDePesquisa}></Header>
       <Wraper>
-        <Container>
-          {materialData}
-          {materialData}
-          {materialData}
-          {materialData}
-        </Container>
+        <Container>{materialData}</Container>
         <AdderContainer>
           <AdderButton onClick={() => setNewModal(!newModal)}>
             <h1>+</h1>
