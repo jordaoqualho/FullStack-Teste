@@ -3,6 +3,7 @@ import Header from "components/Header/Header";
 import { Container, Material, MaterialText, Wraper } from "./Style";
 import pedra from "img/pedra.jpg";
 import axios from "axios";
+import Adder from "components/Adder/Adder";
 
 export const Home = () => {
   const conexao = axios.create({
@@ -13,12 +14,13 @@ export const Home = () => {
 
   useEffect(() => {
     doGetMaterial(termoDePesquisa);
-    console.log(termoDePesquisa);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [termoDePesquisa]);
 
   const doGetMaterial = async (termoDePesquisa) => {
-    const response = await conexao.get(`/material/`);
+    const response = await conexao.get(
+      `/material/?descricao=${termoDePesquisa}`
+    );
     setMaterial(response.data);
   };
 
@@ -52,6 +54,7 @@ export const Home = () => {
           {materialData}
           {materialData}
         </Container>
+        <Adder></Adder>
       </Wraper>
     </>
   );

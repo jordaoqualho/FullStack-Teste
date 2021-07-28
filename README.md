@@ -17,7 +17,7 @@ Data Inativação;
 - [x] Criar tabela com marcas
 - [x] Adicionar Marcas a tabelas
 - [x] Listagem responsiva dos materiais, exibindo a thumb, Descrição e Descrição da Marca;
-- [] Na listagem, incluir um campo texto, para busca por materiais;
+- [x] Na listagem, incluir um campo texto, para busca por materiais;
 - [] Opções de editar e inativar o material;
 - [] Modal para edição, com todas as informações do material, incluindo um combobox para selecionar a marca;
 - [] Modal para Inclusão dos materiais;

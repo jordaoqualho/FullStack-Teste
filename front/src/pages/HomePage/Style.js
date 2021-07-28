@@ -2,19 +2,20 @@ import styled from "styled-components";
 
 export const Wraper = styled.div`
   background-color: #212121;
+  position: relative;
   width: 100%;
   height: calc(100vh - 60px);
 `;
 
 export const Container = styled.div`
   background-color: #212121;
-  height: calc(100vh - 120px);
+  max-height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
-  overflow-y: auto;
+  overflow: auto;
   ::-webkit-scrollbar {
     width: 8px;
   }
