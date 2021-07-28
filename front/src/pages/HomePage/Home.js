@@ -7,6 +7,7 @@ import {
   Wraper,
   AdderButton,
   AdderContainer,
+  Paragraf,
 } from "./Style";
 import pedra from "img/pedra.jpg";
 import axios from "axios";
@@ -35,7 +36,7 @@ export const Home = () => {
 
   const materialData =
     material.length === 0 ? (
-      <p>Nada encontrado!</p>
+      <Paragraf>Nada encontrado!</Paragraf>
     ) : (
       material.map((row, i) => {
         return (

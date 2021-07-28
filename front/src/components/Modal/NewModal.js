@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import tempAlert from "components/Alert/Alert";
 import axios from "axios";
 import {
   ModalContainer,
@@ -29,6 +30,8 @@ export default function NewModal(props) {
       handleModal();
       setNewModal(!newModal);
     }
+    document.getElementById("descricao").focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newModal]);
 
   const doGetMarca = async () => {
@@ -43,6 +46,7 @@ export default function NewModal(props) {
 
   useEffect(() => {
     doGetMarca();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleModal = () => {
@@ -78,15 +82,19 @@ export default function NewModal(props) {
       });
     }
     doPostMaterial();
-    setNewModal(!newModal);
+    tempAlert("Material Adicionado com sucesso!", 3000);
+    // setNewModal(!newModal);
+    setTimeout(function () {
+      window.location.reload();
+    }, 3000);
   };
 
   function dataAtualFormatada() {
     var data = new Date(),
       dia = data.getDate().toString(),
-      diaF = dia.length == 1 ? "0" + dia : dia,
+      diaF = dia.length === 1 ? "0" + dia : dia,
       mes = (data.getMonth() + 1).toString(),
-      mesF = mes.length == 1 ? "0" + mes : mes,
+      mesF = mes.length === 1 ? "0" + mes : mes,
       anoF = data.getFullYear();
     return diaF + "/" + mesF + "/" + anoF;
   }
@@ -108,7 +116,13 @@ export default function NewModal(props) {
           <img src={file.file} alt="" />
         </Image>
         <h2>Descrição</h2>
-        <Input type="text" name="descricao" onChange={handleChange} required />
+        <Input
+          id="descricao"
+          type="text"
+          name="descricao"
+          onChange={handleChange}
+          required
+        />
         <h2>Marca</h2>
         <Select
           name="marca"
@@ -130,7 +144,7 @@ export default function NewModal(props) {
         </Select>
         <Buttons>
           <button>Confirmar</button>
-          <button>
+          <button type="button">
             <a href="/">Cancelar</a>
           </button>
         </Buttons>

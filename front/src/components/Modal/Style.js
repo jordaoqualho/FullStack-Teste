@@ -16,7 +16,6 @@ export const Modal = styled.form`
   display: flex;
   flex-direction: column;
   padding: 50px;
-  height: 70%;
   position: absolute;
   border-radius: 20px;
   top: 50%;
@@ -25,24 +24,23 @@ export const Modal = styled.form`
   background-color: #212121;
   h2 {
     color: white;
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
 export const Input = styled.input`
   border: none;
   border-radius: 5px;
-  padding: 10px 10px;
-  margin: 5px 0 30px 0;
+  padding: 5px 10px;
+  margin: 5px 0 15px 0;
 `;
 
 export const Image = styled.div`
   display: flex;
   border-radius: 5px;
   height: 90px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-top: 5px;
-
   img {
     height: 100%;
   }
@@ -53,15 +51,15 @@ export const InputImage = styled.input`
   background-color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 10px;
+  padding: 5px 10px;
   margin: 5px 0 0px 0;
 `;
 
 export const Select = styled.select`
   border: none;
   border-radius: 5px;
-  padding: 10px 10px;
-  margin: 5px 0 30px 0;
+  padding: 5px 10px;
+  margin: 5px 0 15px 0;
 `;
 
 export const Buttons = styled.div`

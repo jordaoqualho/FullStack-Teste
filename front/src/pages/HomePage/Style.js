@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Paragraf = styled.p`
+  color: #fff;
+  font-size: 20px;
+`;
+
 export const Wraper = styled.div`
   background-color: #212121;
   position: relative;
