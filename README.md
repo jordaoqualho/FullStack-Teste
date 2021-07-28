@@ -19,8 +19,8 @@ Data Inativação;
 - [x] Listagem responsiva dos materiais, exibindo a thumb, Descrição e Descrição da Marca;
 - [x] Na listagem, incluir um campo texto, para busca por materiais;
 - [] Opções de editar e inativar o material;
-- [] Modal para edição, com todas as informações do material, incluindo um combobox para selecionar a marca;
-- [] Modal para Inclusão dos materiais;
+- [x] Modal para edição, com todas as informações do material, incluindo um combobox para selecionar a marca;
+- [x] Modal para Inclusão dos materiais;
 - [] Subir no github
 
 ## Links Uteis
@@ -36,3 +36,9 @@ https://qastack.com.br/programming/15772394/how-to-upload-display-and-save-image
 https://cria.io/detalhes/
 
 https://appcria.com/login.php
+
+https://www.youtube.com/watch?v=MkkbUfcZUZM
+
+https://s3.console.aws.amazon.com/s3/buckets/fullstack-images-teste?region=sa-east-1&tab=objects
+
+https://qastack.com.br/programming/15772394/how-to-upload-display-and-save-images-using-node-js-and-express
