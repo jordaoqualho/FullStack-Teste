@@ -12,7 +12,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const Modal = styled.form`
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   padding: 50px;

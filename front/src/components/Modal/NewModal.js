@@ -50,6 +50,14 @@ export default function NewModal(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (material.ativo === "false") {
+      setMaterial({ ...material, dataInativacao: dataAtualFormatada() });
+    } else {
+      setMaterial({ ...material, dataInativacao: "Material está ativo!" });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [material.ativo]);
   const handleModal = () => {
     if (aberto) {
       document.getElementById("modal-container").style.display = "none";
@@ -97,16 +105,7 @@ export default function NewModal(props) {
       ...material,
       [event.target.name]: event.target.value,
     };
-    const data = dataAtualFormatada();
-    console.log(data);
-    if (material.ativo === "false") {
-      setMaterial({
-        ...material,
-        dataInativacao: "data",
-      });
-    }
-    setMaterial(material);
-    console.log(novoMaterial);
+    setMaterial(novoMaterial);
   };
 
   return (
@@ -139,12 +138,21 @@ export default function NewModal(props) {
         <Select
           name="ativo"
           onChange={handleChange}
-          defaultValue="true"
           required
+          defaultValue="true"
         >
           <option value="true">Disponível</option>
           <option value="false">Indisponível</option>
         </Select>
+        <h2>Data de Inativação</h2>
+        <Input
+          readOnly
+          type="text"
+          name="descricao"
+          value={material.dataInativacao}
+          onChange={handleChange}
+          required
+        />
         <Buttons>
           <button>Confirmar</button>
           <button type="button">

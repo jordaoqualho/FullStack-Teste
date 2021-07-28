@@ -48,13 +48,13 @@ export const Home = () => {
           >
             <img src={pedra} alt="" />
             <MaterialText>
+              {row.ativo === "true" ? (
+                <span id="on">disponível</span>
+              ) : (
+                <span id="off">indisponível</span>
+              )}
               <h2>{row.descricao}</h2>
-              <p>
-                {row.marca} -{" "}
-                {row.ativo === "true"
-                  ? "disponível"
-                  : "indisponível" + row.dataInativacao}
-              </p>
+              <p>{row.marca}</p>
               <p></p>
             </MaterialText>
           </Material>

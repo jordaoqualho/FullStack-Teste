@@ -37,7 +37,7 @@ export const Material = styled.div`
   border-radius: 20px;
   color: #212121;
   cursor: pointer;
-  height: 250px;
+  height: 270px;
   margin: 10px 10px;
   width: 250px;
   img {
@@ -48,7 +48,21 @@ export const Material = styled.div`
 `;
 
 export const MaterialText = styled.div`
-  padding: 10px 20px;
+  span {
+    font-size: 12px;
+    color: white;
+    padding: 0px 15px;
+  }
+  #on {
+    background-color: #7ed321;
+  }
+  #off {
+    background-color: #495057;
+  }
+  padding: 5px 20px;
+  h2 {
+    margin-bottom: -5px;
+  }
 `;
 
 export const AdderContainer = styled.div`

@@ -101,17 +101,16 @@ export default function EditModal(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (material.ativo === "false") {
-      // console.log(dataAtualFormatada());
       setMaterial({
         ...material,
         dataInativacao: dataAtualFormatada(),
       });
     }
     doPutMaterial();
-    tempAlert("Material Alterado com sucesso!", 3000);
+    tempAlert("Material Alterado com sucesso!", 1500);
     setTimeout(function () {
       window.location.reload();
-    }, 3000);
+    }, 1500);
   };
 
   function dataAtualFormatada() {
@@ -129,7 +128,6 @@ export default function EditModal(props) {
       [event.target.name]: event.target.value,
     };
     setMaterial(novoMaterial);
-    console.log(novoMaterial);
   };
 
   return (
@@ -173,7 +171,15 @@ export default function EditModal(props) {
             Indisponível
           </option>
         </Select>
-        <p>{material.dataInativacao}</p>
+        <h2>Data de Inativação</h2>
+        <Input
+          readOnly
+          type="text"
+          name="descricao"
+          value={material.dataInativacao}
+          onChange={handleChange}
+          required
+        />
         <Buttons>
           <button>Confirmar</button>
           <button type="button">
