@@ -49,7 +49,13 @@ export const Home = () => {
             <img src={pedra} alt="" />
             <MaterialText>
               <h2>{row.descricao}</h2>
-              <p>{row.marca}</p>
+              <p>
+                {row.marca} -{" "}
+                {row.ativo === "true"
+                  ? "disponível"
+                  : "indisponível" + row.dataInativacao}
+              </p>
+              <p></p>
             </MaterialText>
           </Material>
         );

@@ -173,6 +173,7 @@ export default function EditModal(props) {
             Indisponível
           </option>
         </Select>
+        <p>{material.dataInativacao}</p>
         <Buttons>
           <button>Confirmar</button>
           <button type="button">

@@ -20,6 +20,7 @@ export default function NewModal(props) {
   const [marca, setMarca] = useState([{}]);
   const [file, setFile] = useState({ file: null });
   const [material, setMaterial] = useState({
+    descricao: "",
     marca: "Portobello",
     ativo: "true",
     dataInativacao: "",
@@ -40,8 +41,8 @@ export default function NewModal(props) {
   };
 
   const doPostMaterial = async () => {
-    const response = await conexao.post(`/material/`, material);
-    setMaterial(response.data);
+    await conexao.post(`/material/`, material);
+    console.log(material);
   };
 
   useEffect(() => {
@@ -74,16 +75,8 @@ export default function NewModal(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (material.ativo === "false") {
-      // console.log(dataAtualFormatada());
-      setMaterial({
-        ...material,
-        dataInativacao: dataAtualFormatada(),
-      });
-    }
     doPostMaterial();
     tempAlert("Material Adicionado com sucesso!", 1500);
-    // setNewModal(!newModal);
     setTimeout(function () {
       window.location.reload();
     }, 1500);
@@ -96,14 +89,23 @@ export default function NewModal(props) {
       mes = (data.getMonth() + 1).toString(),
       mesF = mes.length === 1 ? "0" + mes : mes,
       anoF = data.getFullYear();
-    return diaF + "/" + mesF + "/" + anoF;
+    const dataAtaul = diaF + "/" + mesF + "/" + anoF;
+    return dataAtaul.toString();
   }
   const handleChange = (event) => {
     const novoMaterial = {
       ...material,
       [event.target.name]: event.target.value,
     };
-    setMaterial(novoMaterial);
+    const data = dataAtualFormatada();
+    console.log(data);
+    if (material.ativo === "false") {
+      setMaterial({
+        ...material,
+        dataInativacao: "data",
+      });
+    }
+    setMaterial(material);
     console.log(novoMaterial);
   };
 
