@@ -45,3 +45,27 @@ export const Material = styled.div`
 export const MaterialText = styled.div`
   padding: 10px 20px;
 `;
+
+export const AdderContainer = styled.div`
+  position: relative;
+  background-color: blue;
+`;
+
+export const AdderButton = styled.button`
+  position: absolute;
+  background-color: #7ed321;
+  right: 11%;
+  bottom: 0px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  transition: 0.3s ease;
+  :hover {
+    background-color: #495057;
+  }
+`;

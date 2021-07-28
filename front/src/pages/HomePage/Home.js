@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Header from "components/Header/Header";
-import { Container, Material, MaterialText, Wraper } from "./Style";
+import {
+  Container,
+  Material,
+  MaterialText,
+  Wraper,
+  AdderButton,
+  AdderContainer,
+} from "./Style";
 import pedra from "img/pedra.jpg";
 import axios from "axios";
-import Adder from "components/Adder/Adder";
+
+import NewModal from "components/Modal/NewModal";
 
 export const Home = () => {
   const conexao = axios.create({
@@ -11,6 +19,7 @@ export const Home = () => {
   });
   const [material, setMaterial] = useState([{}]);
   const [termoDePesquisa, setTermoDePesquisa] = useState("");
+  const [newModal, setNewModal] = useState(false);
 
   useEffect(() => {
     doGetMaterial(termoDePesquisa);
@@ -54,7 +63,13 @@ export const Home = () => {
           {materialData}
           {materialData}
         </Container>
-        <Adder></Adder>
+        <AdderContainer>
+          <AdderButton onClick={() => setNewModal(!newModal)}>
+            <h1>+</h1>
+          </AdderButton>
+        </AdderContainer>
+        {/* <EditModal></EditModal> */}
+        <NewModal setNewModal={setNewModal} newModal={newModal}></NewModal>
       </Wraper>
     </>
   );
